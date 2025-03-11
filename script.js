@@ -288,7 +288,7 @@ const products = {
         { modelo: "CONEXÃO RETA METÁLICA", rosca: "3/8", tubo: "12 MM", codigo: "36388" },
         { modelo: "CONEXÃO RETA METÁLICA", rosca: "1/2", tubo: "10 MM", codigo: "40673" },
         { modelo: "CONEXÃO GIRATÓRIA METÁLICA", rosca: "M5", tubo: "4 MM", codigo: "55353" },
-        { modelo: "CONEXÃO GIRATÓRIA METÁLICA2", rosca: "M5", tubo: "4 MM", codigo: "51485" }
+        { modelo: "CONEXÃO GIRATÓRIA METÁLICA2", rosca: "1/8", tubo: "6 MM", codigo: "51485" }
         
 
     ]
