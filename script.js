@@ -189,6 +189,7 @@ const products = {
         { modelo: "CONEXÃO RETA", rosca: "1/4", tubo: "4 MM", codigo: "14347" },
         { modelo: "CONEXÃO RETA", rosca: "1/4", tubo: "6 MM", codigo: "12784" },
         { modelo: "CONEXÃO RETA", rosca: "1/4", tubo: "8 MM", codigo: "5320" },
+        { modelo: "CONEXÃO RETA", rosca: "1/4", tubo: "8 MM", codigo: "10510" },
         { modelo: "CONEXÃO RETA", rosca: "1/4", tubo: "10 MM", codigo: "6201" },
         { modelo: "CONEXÃO RETA", rosca: "1/4", tubo: "12 MM", codigo: "14508" },
         { modelo: "CONEXÃO RETA", rosca: "3/8", tubo: "8 MM", codigo: "6202" },
@@ -333,6 +334,10 @@ const imagensProdutos = {
     "BUCHA DE REDUÇÃO": {
         METALWORK: "images/METALWORK REDUCAO.png"
     },
+    "CONEXÃO RETA METÁLICA": {
+        METALWORK: "images/METALWORK RETA METÁLICA.png"
+    },
+
 };
 
 document.getElementById('tipo').addEventListener('change', function() {
@@ -380,7 +385,7 @@ function searchProducts() {
 
     for (const brand in products) {
         products[brand].forEach(product => {
-            if (product.modelo === tipo) {
+            if (product.modelo === tipo || product.modelo === `${tipo} METÁLICA`) {
                 if (["UNIÃO RETA", "UNIÃO T", "UNIÃO Y", "UNIÃO L", "UNIÃO PAINEL"].includes(tipo)) {
                     if (product.tubo === tubo) {
                         results[brand].push(product);
@@ -421,7 +426,13 @@ function displayResults(results) {
                 <div class="product-result">
                     <img src="${imgSrc}" alt="${tipo} ${brand}" class="product-image">
                     <ul>
-                        ${results[brand].map(product => `<li>Código: ${product.codigo}</li>`).join('')}
+                        ${results[brand].map(product => {
+                            if (product.modelo === tipo) {
+                                return `<li>Código: ${product.codigo}</li>`;
+                            } else if (product.modelo === `${tipo} METÁLICA`) {
+                                return `<li>Código (Metálica): ${product.codigo}</li>`;
+                            }
+                        }).join('')}
                     </ul>
                 </div>
             `;
