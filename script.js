@@ -189,7 +189,7 @@ const products = {
         { modelo: "CONEXÃO RETA", rosca: "1/4", tubo: "4 MM", codigo: "14347" },
         { modelo: "CONEXÃO RETA", rosca: "1/4", tubo: "6 MM", codigo: "12784" },
         { modelo: "CONEXÃO RETA", rosca: "1/4", tubo: "8 MM", codigo: "5320" },
-        { modelo: "CONEXÃO RETA", rosca: "1/4", tubo: "8 MM", codigo: "10510" },
+        { modelo: "CONEXÃO RETA METÁLICA", rosca: "1/4", tubo: "8 MM", codigo: "10510" },
         { modelo: "CONEXÃO RETA", rosca: "1/4", tubo: "10 MM", codigo: "6201" },
         { modelo: "CONEXÃO RETA", rosca: "1/4", tubo: "12 MM", codigo: "14508" },
         { modelo: "CONEXÃO RETA", rosca: "3/8", tubo: "8 MM", codigo: "6202" },
