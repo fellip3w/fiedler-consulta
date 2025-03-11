@@ -428,38 +428,95 @@ function searchProducts() {
     displayResults(results);
 }
 
-.product-result {
-    margin-bottom: 20px;
-    padding: 15px;
-    background-color: #f8f9fa;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
+function displayResults(results) {
+    const resultsGrid = document.getElementById('resultsGrid');
+    resultsGrid.innerHTML = '';
 
-.product-result img {
-    width: 150px;
-    height: auto;
-    margin-bottom: 10px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    opacity: 0;
-    transition: opacity 0.5s ease;
-}
+    const tipo = document.getElementById('tipo').value;
 
-.product-result img.visible {
-    opacity: 1;
-}
+    for (const brand in results) {
+        if (results[brand].length > 0) {
+            const brandResults = document.createElement('div');
+            brandResults.className = 'brand-results';
 
-.product-result ul {
-    list-style-type: none;
-    padding: 0;
-}
+            // Filtra os produtos normais, metálicos e metálicos2
+            const produtosNormais = results[brand].filter(product => product.modelo === tipo);
+            const produtosMetalicos = results[brand].filter(product => product.modelo === `${tipo} METÁLICA`);
+            const produtosMetalicos2 = results[brand].filter(product => product.modelo === `${tipo} METÁLICA2`);
 
-.product-result ul li {
-    background-color: #fff;
-    padding: 10px;
-    margin-bottom: 5px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    text-align: center;
+            // Imagem da conexão normal
+            const imgSrcNormal = imagensProdutos[tipo]?.[brand] || "images/default.png";
+
+            // Imagem da conexão metálica (se existir)
+            const imgSrcMetalica = imagensProdutos[`${tipo} METÁLICA`]?.[brand] || "images/default.png";
+
+            // Imagem da conexão metálica2 (se existir)
+            const imgSrcMetalica2 = imagensProdutos[`${tipo} METÁLICA2`]?.[brand] || "images/default.png";
+
+            // Exibe a conexão normal
+            brandResults.innerHTML = `
+                <h3>${brand}</h3>
+                <div class="product-result">
+                    <img src="${imgSrcNormal}" alt="${tipo} ${brand}" class="product-image">
+                    <ul>
+                        ${produtosNormais.map(product => `<li>Código: ${product.codigo}</li>`).join('')}
+                    </ul>
+                </div>
+            `;
+
+            // Se houver conexão metálica, exibe abaixo da normal
+            if (produtosMetalicos.length > 0) {
+                brandResults.innerHTML += `
+                    <div class="product-result">
+                        <img src="${imgSrcMetalica}" alt="${tipo} METÁLICA ${brand}" class="product-image">
+                        <ul>
+                            ${produtosMetalicos.map(product => `<li>Código: ${product.codigo}</li>`).join('')}
+                        </ul>
+                    </div>
+                `;
+            }
+
+            // Se houver conexão metálica2, exibe abaixo da metálica
+            if (produtosMetalicos2.length > 0) {
+                brandResults.innerHTML += `
+                    <div class="product-result">
+                        <img src="${imgSrcMetalica2}" alt="${tipo} METÁLICA2 ${brand}" class="product-image">
+                        <ul>
+                            ${produtosMetalicos2.map(product => `<li>Código: ${product.codigo}</li>`).join('')}
+                        </ul>
+                    </div>
+                `;
+            }
+
+            resultsGrid.appendChild(brandResults);
+
+            // Animação de exibição
+            setTimeout(() => {
+                brandResults.classList.add('visible');
+                const images = brandResults.querySelectorAll('.product-image');
+                images.forEach((image, index) => {
+                    setTimeout(() => image.classList.add('visible'), 100 * (index + 1));
+                });
+            }, 100);
+        }
+    }
+    // Para conexão metálica
+brandResults.innerHTML += `
+<div class="product-result metalica">
+    <img src="${imgSrcMetalica}" alt="${tipo} METÁLICA ${brand}" class="product-image">
+    <ul>
+        ${produtosMetalicos.map(product => `<li>Código: ${product.codigo}</li>`).join('')}
+    </ul>
+</div>
+`;
+
+// Para conexão metálica2
+brandResults.innerHTML += `
+<div class="product-result metalica2">
+    <img src="${imgSrcMetalica2}" alt="${tipo} METÁLICA2 ${brand}" class="product-image">
+    <ul>
+        ${produtosMetalicos2.map(product => `<li>Código: ${product.codigo}</li>`).join('')}
+    </ul>
+</div>
+`;
 }
