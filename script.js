@@ -448,7 +448,7 @@ function displayResults(results) {
                     <div class="product-result">
                         <img src="${imgSrcMetalica}" alt="${tipo} METÁLICA ${brand}" class="product-image">
                         <ul>
-                            ${produtosMetalicos.map(product => `<li>Código (Metálica): ${product.codigo}</li>`).join('')}
+                            ${produtosMetalicos.map(product => `<li>Código: ${product.codigo}</li>`).join('')}
                         </ul>
                     </div>
                 `;
