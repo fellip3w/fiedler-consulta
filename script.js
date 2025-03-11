@@ -189,7 +189,6 @@ const products = {
         { modelo: "CONEXÃO RETA", rosca: "1/4", tubo: "4 MM", codigo: "14347" },
         { modelo: "CONEXÃO RETA", rosca: "1/4", tubo: "6 MM", codigo: "12784" },
         { modelo: "CONEXÃO RETA", rosca: "1/4", tubo: "8 MM", codigo: "5320" },
-        { modelo: "CONEXÃO RETA METÁLICA", rosca: "1/4", tubo: "8 MM", codigo: "20170" },
         { modelo: "CONEXÃO RETA", rosca: "1/4", tubo: "10 MM", codigo: "6201" },
         { modelo: "CONEXÃO RETA", rosca: "1/4", tubo: "12 MM", codigo: "14508" },
         { modelo: "CONEXÃO RETA", rosca: "3/8", tubo: "8 MM", codigo: "6202" },
@@ -278,7 +277,17 @@ const products = {
         { modelo: "BUCHA DE REDUÇÃO", rosca: "3/8", rosca2: "1/8", tubo:"" , codigo: "17020"},
         { modelo: "BUCHA DE REDUÇÃO", rosca: "3/8", rosca2: "1/4", tubo:"" , codigo: "12331"},
         { modelo: "BUCHA DE REDUÇÃO", rosca: "1/2", rosca2: "1/4", tubo:"" , codigo: "17023"},
-        { modelo: "BUCHA DE REDUÇÃO", rosca: "1/2", rosca2: "3/8", tubo:"" , codigo: "12332"}
+        { modelo: "BUCHA DE REDUÇÃO", rosca: "1/2", rosca2: "3/8", tubo:"" , codigo: "12332"},
+        { modelo: "CONEXÃO RETA METÁLICA", rosca: "1/8", tubo: "6 MM", codigo: "49014" },
+        { modelo: "CONEXÃO RETA METÁLICA", rosca: "1/8", tubo: "8 MM", codigo: "58900" },
+        { modelo: "CONEXÃO RETA METÁLICA", rosca: "1/4", tubo: "6 MM", codigo: "47854" },
+        { modelo: "CONEXÃO RETA METÁLICA", rosca: "1/4", tubo: "8 MM", codigo: "20170" },
+        { modelo: "CONEXÃO RETA METÁLICA", rosca: "1/4", tubo: "10 MM", codigo: "39444" },
+        { modelo: "CONEXÃO RETA METÁLICA", rosca: "3/8", tubo: "8 MM", codigo: "44597" },
+        { modelo: "CONEXÃO RETA METÁLICA", rosca: "3/8", tubo: "10 MM", codigo: "44602" },
+        { modelo: "CONEXÃO RETA METÁLICA", rosca: "3/8", tubo: "12 MM", codigo: "36388" },
+        { modelo: "CONEXÃO RETA METÁLICA", rosca: "1/2", tubo: "10 MM", codigo: "40673" }
+
     ]
 };
 const imagensProdutos = {
