@@ -335,7 +335,7 @@ const imagensProdutos = {
         METALWORK: "images/METALWORK REDUCAO.png"
     },
     "CONEXÃO RETA METÁLICA": {
-        METALWORK: "images/METALWORK RETA METÁLICA.png"
+        METALWORK: "images/METALWORK RETA METALICA.png"
     },
 
 };
