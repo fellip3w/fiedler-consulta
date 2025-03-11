@@ -421,40 +421,48 @@ function displayResults(results) {
             const brandResults = document.createElement('div');
             brandResults.className = 'brand-results';
 
-            // Verifica se há uma versão metálica
-            const hasMetalicVersion = results[brand].some(product => product.modelo === `${tipo} METÁLICA`);
+            // Filtra os produtos normais e metálicos
+            const produtosNormais = results[brand].filter(product => product.modelo === tipo);
+            const produtosMetalicos = results[brand].filter(product => product.modelo === `${tipo} METÁLICA`);
 
-            // Define a imagem padrão
-            let imgSrc = imagensProdutos[tipo]?.[brand] || "images/default.png";
+            // Imagem da conexão normal
+            const imgSrcNormal = imagensProdutos[tipo]?.[brand] || "images/default.png";
 
-            // Se houver uma versão metálica, adiciona a imagem da versão metálica
-            if (hasMetalicVersion) {
-                imgSrc = imagensProdutos[`${tipo} METÁLICA`]?.[brand] || imgSrc;
-            }
+            // Imagem da conexão metálica (se existir)
+            const imgSrcMetalica = imagensProdutos[`${tipo} METÁLICA`]?.[brand] || "images/default.png";
 
+            // Exibe a conexão normal
             brandResults.innerHTML = `
                 <h3>${brand}</h3>
                 <div class="product-result">
-                    <img src="${imgSrc}" alt="${tipo} ${brand}" class="product-image">
+                    <img src="${imgSrcNormal}" alt="${tipo} ${brand}" class="product-image">
                     <ul>
-                        ${results[brand].map(product => {
-                            if (product.modelo === tipo) {
-                                return `<li>Código: ${product.codigo}</li>`;
-                            } else if (product.modelo === `${tipo} METÁLICA`) {
-                                return `<li>Código (Metálica): ${product.codigo}</li>`;
-                            }
-                        }).join('')}
+                        ${produtosNormais.map(product => `<li>Código: ${product.codigo}</li>`).join('')}
                     </ul>
                 </div>
             `;
+
+            // Se houver conexão metálica, exibe abaixo da normal
+            if (produtosMetalicos.length > 0) {
+                brandResults.innerHTML += `
+                    <div class="product-result">
+                        <img src="${imgSrcMetalica}" alt="${tipo} METÁLICA ${brand}" class="product-image">
+                        <ul>
+                            ${produtosMetalicos.map(product => `<li>Código (Metálica): ${product.codigo}</li>`).join('')}
+                        </ul>
+                    </div>
+                `;
+            }
+
             resultsGrid.appendChild(brandResults);
 
+            // Animação de exibição
             setTimeout(() => {
                 brandResults.classList.add('visible');
-                const image = brandResults.querySelector('.product-image');
-                if (image) {
-                    setTimeout(() => image.classList.add('visible'), 100);
-                }
+                const images = brandResults.querySelectorAll('.product-image');
+                images.forEach((image, index) => {
+                    setTimeout(() => image.classList.add('visible'), 100 * (index + 1));
+                });
             }, 100);
         }
     }
