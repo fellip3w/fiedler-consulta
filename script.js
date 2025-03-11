@@ -418,9 +418,20 @@ function displayResults(results) {
 
     for (const brand in results) {
         if (results[brand].length > 0) {
-            const imgSrc = imagensProdutos[tipo]?.[brand] || "images/default.png";
             const brandResults = document.createElement('div');
             brandResults.className = 'brand-results';
+
+            // Verifica se há uma versão metálica
+            const hasMetalicVersion = results[brand].some(product => product.modelo === `${tipo} METÁLICA`);
+
+            // Define a imagem padrão
+            let imgSrc = imagensProdutos[tipo]?.[brand] || "images/default.png";
+
+            // Se houver uma versão metálica, adiciona a imagem da versão metálica
+            if (hasMetalicVersion) {
+                imgSrc = imagensProdutos[`${tipo} METÁLICA`]?.[brand] || imgSrc;
+            }
+
             brandResults.innerHTML = `
                 <h3>${brand}</h3>
                 <div class="product-result">
