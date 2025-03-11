@@ -286,7 +286,8 @@ const products = {
         { modelo: "CONEXÃO RETA METÁLICA", rosca: "3/8", tubo: "8 MM", codigo: "44597" },
         { modelo: "CONEXÃO RETA METÁLICA", rosca: "3/8", tubo: "10 MM", codigo: "44602" },
         { modelo: "CONEXÃO RETA METÁLICA", rosca: "3/8", tubo: "12 MM", codigo: "36388" },
-        { modelo: "CONEXÃO RETA METÁLICA", rosca: "1/2", tubo: "10 MM", codigo: "40673" }
+        { modelo: "CONEXÃO RETA METÁLICA", rosca: "1/2", tubo: "10 MM", codigo: "40673" },
+        { modelo: "CONEXÃO GIRATÓRIA METÁLICA", rosca: "M5", tubo: "4 MM", codigo: "55353" }
 
     ]
 };
@@ -345,6 +346,9 @@ const imagensProdutos = {
     },
     "CONEXÃO RETA METÁLICA": {
         METALWORK: "images/METALWORK RETA METALICA.png"
+    },
+    "CONEXÃO GIRATÓRIA METÁLICA": {
+        METALWORK: "images/METALWORK GIRATORIA METALICA.png"
     },
 
 };
