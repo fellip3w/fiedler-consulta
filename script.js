@@ -287,7 +287,9 @@ const products = {
         { modelo: "CONEXÃO RETA METÁLICA", rosca: "3/8", tubo: "10 MM", codigo: "44602" },
         { modelo: "CONEXÃO RETA METÁLICA", rosca: "3/8", tubo: "12 MM", codigo: "36388" },
         { modelo: "CONEXÃO RETA METÁLICA", rosca: "1/2", tubo: "10 MM", codigo: "40673" },
-        { modelo: "CONEXÃO GIRATÓRIA METÁLICA", rosca: "M5", tubo: "4 MM", codigo: "55353" }
+        { modelo: "CONEXÃO GIRATÓRIA METÁLICA", rosca: "M5", tubo: "4 MM", codigo: "55353" },
+        { modelo: "CONEXÃO GIRATÓRIA METÁLICA2", rosca: "M5", tubo: "4 MM", codigo: "51485" }
+        
 
     ]
 };
@@ -349,6 +351,9 @@ const imagensProdutos = {
     },
     "CONEXÃO GIRATÓRIA METÁLICA": {
         METALWORK: "images/METALWORK GIRATORIA METALICA.png"
+    },
+    "CONEXÃO GIRATÓRIA METÁLICA2": {
+        METALWORK: "images/METALWORK GIRATORIA METALICA2.png"
     },
 
 };
@@ -434,15 +439,19 @@ function displayResults(results) {
             const brandResults = document.createElement('div');
             brandResults.className = 'brand-results';
 
-            // Filtra os produtos normais e metálicos
+            // Filtra os produtos normais, metálicos e metálicos2
             const produtosNormais = results[brand].filter(product => product.modelo === tipo);
             const produtosMetalicos = results[brand].filter(product => product.modelo === `${tipo} METÁLICA`);
+            const produtosMetalicos2 = results[brand].filter(product => product.modelo === `${tipo} METÁLICA2`);
 
             // Imagem da conexão normal
             const imgSrcNormal = imagensProdutos[tipo]?.[brand] || "images/default.png";
 
             // Imagem da conexão metálica (se existir)
             const imgSrcMetalica = imagensProdutos[`${tipo} METÁLICA`]?.[brand] || "images/default.png";
+
+            // Imagem da conexão metálica2 (se existir)
+            const imgSrcMetalica2 = imagensProdutos[`${tipo} METÁLICA2`]?.[brand] || "images/default.png";
 
             // Exibe a conexão normal
             brandResults.innerHTML = `
@@ -462,6 +471,18 @@ function displayResults(results) {
                         <img src="${imgSrcMetalica}" alt="${tipo} METÁLICA ${brand}" class="product-image">
                         <ul>
                             ${produtosMetalicos.map(product => `<li>Código: ${product.codigo}</li>`).join('')}
+                        </ul>
+                    </div>
+                `;
+            }
+
+            // Se houver conexão metálica2, exibe abaixo da metálica
+            if (produtosMetalicos2.length > 0) {
+                brandResults.innerHTML += `
+                    <div class="product-result">
+                        <img src="${imgSrcMetalica2}" alt="${tipo} METÁLICA2 ${brand}" class="product-image">
+                        <ul>
+                            ${produtosMetalicos2.map(product => `<li>Código: ${product.codigo}</li>`).join('')}
                         </ul>
                     </div>
                 `;
