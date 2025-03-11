@@ -288,8 +288,29 @@ const products = {
         { modelo: "CONEXÃO RETA METÁLICA", rosca: "3/8", tubo: "12 MM", codigo: "36388" },
         { modelo: "CONEXÃO RETA METÁLICA", rosca: "1/2", tubo: "10 MM", codigo: "40673" },
         { modelo: "CONEXÃO GIRATÓRIA METÁLICA", rosca: "M5", tubo: "4 MM", codigo: "55353" },
-        { modelo: "CONEXÃO GIRATÓRIA METÁLICA2", rosca: "1/8", tubo: "6 MM", codigo: "51485" }
-        
+        { modelo: "CONEXÃO GIRATÓRIA METÁLICA", rosca: "M5", tubo: "6 MM", codigo: "106" },
+        { modelo: "CONEXÃO GIRATÓRIA METÁLICA", rosca: "1/8", tubo: "4 MM", codigo: "15034" },
+        { modelo: "CONEXÃO GIRATÓRIA METÁLICA", rosca: "1/8", tubo: "6 MM", codigo: "7374" },
+        { modelo: "CONEXÃO GIRATÓRIA METÁLICA", rosca: "1/8", tubo: "8 MM", codigo: "12921" },
+        { modelo: "CONEXÃO GIRATÓRIA METÁLICA", rosca: "1/4", tubo: "4 MM", codigo: "32958" },
+        { modelo: "CONEXÃO GIRATÓRIA METÁLICA", rosca: "1/4", tubo: "8 MM", codigo: "12703" },
+        { modelo: "CONEXÃO GIRATÓRIA METÁLICA", rosca: "1/4", tubo: "10 MM", codigo: "22320" },
+        { modelo: "CONEXÃO GIRATÓRIA METÁLICA", rosca: "1/4", tubo: "12 MM", codigo: "18979" },
+        { modelo: "CONEXÃO GIRATÓRIA METÁLICA", rosca: "3/8", tubo: "8 MM", codigo: "4866" },
+        { modelo: "CONEXÃO GIRATÓRIA METÁLICA", rosca: "3/8", tubo: "10 MM", codigo: "19341" },
+        { modelo: "CONEXÃO GIRATÓRIA METÁLICA", rosca: "3/8", tubo: "12 MM", codigo: "18001" },
+        { modelo: "CONEXÃO GIRATÓRIA METÁLICA", rosca: "1/2", tubo: "10 MM", codigo: "45844" },
+        { modelo: "CONEXÃO GIRATÓRIA METÁLICA", rosca: "1/2", tubo: "12 MM", codigo: "17852" },
+        { modelo: "UNIÃO RETA METÁLICA", rosca: "", tubo: "4 MM", codigo: "45966" },
+        { modelo: "UNIÃO RETA METÁLICA", rosca: "", tubo: "6 MM", codigo: "14589" },
+        { modelo: "UNIÃO RETA METÁLICA", rosca: "", tubo: "8 MM", codigo: "14605" },
+        { modelo: "UNIÃO RETA METÁLICA", rosca: "", tubo: "10 MM", codigo: "13126" },
+        { modelo: "UNIÃO RETA METÁLICA", rosca: "", tubo: "12 MM", codigo: "58801" },
+        { modelo: "UNIÃO T METÁLICA", rosca: "", tubo: "4 MM", codigo: "19317" },
+        { modelo: "UNIÃO T METÁLICA", rosca: "", tubo: "6 MM", codigo: "18951" },
+        { modelo: "UNIÃO T METÁLICA", rosca: "", tubo: "8 MM", codigo: "17484" },
+        { modelo: "UNIÃO T METÁLICA", rosca: "", tubo: "10 MM", codigo: "18964" },
+        { modelo: "UNIÃO T METÁLICA", rosca: "", tubo: "12 MM", codigo: "14665" }
 
     ]
 };
@@ -354,6 +375,12 @@ const imagensProdutos = {
     },
     "CONEXÃO GIRATÓRIA METÁLICA2": {
         METALWORK: "images/METALWORK GIRATORIA METALICA2.png"
+    },
+    "UNIÃO RETA METÁLICA": {
+        METALWORK: "images/METALWORK UNIAO RETA METALICA.png"
+    },
+    "UNIÃO T METÁLICA": {
+        METALWORK: "images/METALWORK T METALICA.png"
     },
 
 };
