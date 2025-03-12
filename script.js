@@ -382,7 +382,6 @@ const imagensProdutos = {
     },
     "UNIÃO T METÁLICA": {
         METALWORK: "images/METALWORK T METALICA.png"
-        SYSTEM: "images/SISTEM T METALICA.png,"
     },
 
 };
