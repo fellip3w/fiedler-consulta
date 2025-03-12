@@ -179,7 +179,7 @@ const products = {
         { modelo: "UNIÃO PAINEL", rosca: "", tubo: "8 MM", codigo: "31135"},
         { modelo: "UNIÃO PAINEL", rosca: "", tubo: "10 MM", codigo: "50493"},
         { modelo: "UNIÃO PAINEL", rosca: "", tubo: "12 MM", codigo: "58426"},
-        { modelo: "UNIÃO T METÁLICA", rosca: "", tubo: "12 MM", codigo: "4337"},
+        { modelo: "UNIÃO T METÁLICA", rosca: "", tubo: "12 MM", codigo: "4337"}
     ],
     METALWORK: [
         { modelo: "CONEXÃO RETA", rosca: "M5", tubo: "4 MM", codigo: "3172" },
